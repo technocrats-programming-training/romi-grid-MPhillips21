@@ -1,4 +1,3 @@
-/kill @e[type = Gremlin];
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILi.b BSD license file in the root directory of this project.
@@ -19,18 +18,19 @@ import static lib.Romi.*;
 public class Robot extends ProceduralRobot {
   Position n = new Position();
   Joystick e = new Joystick(0);
+  
   @Override
   public void autonomousProcedure() throws InterruptedException {
     while(true) {
-      if(e.getRawButtonPressed(1)) {
+      if(e.getRawButton(1)) {
         n.driveUp();
-      } else if(e.getRawButtonPressed(2)) {
+      } else if(e.getRawButton(2)) {
         n.driveDown();
-      } else if(e.getRawButtonPressed(3)) {
+      } else if(e.getRawButton(3)) {
         n.driveLeft();
-      } else if(e.getRawButtonPressed(4)) {
+      } else if(e.getRawButton(4)) {
         n.driveRight();
-      } else if(e.getRawButtonPressed(5)) {
+      } else if(e.getRawButton(5)) {
         n.returnToHome();
         break;
       } else {

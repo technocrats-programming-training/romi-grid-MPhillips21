@@ -18,25 +18,25 @@ public class Position {
     }
 
     public void driveRight() throws InterruptedException {
-      turnDegrees(-90);
-      driveDistance(10);
       turnDegrees(90);
+      driveDistance(10);
+      turnDegrees(-90);
       this.horizontalPosition += 10;
     }
 
     public void driveLeft() throws InterruptedException {
-      turnDegrees(90);
-      driveDistance(-10);
       turnDegrees(-90);
+      driveDistance(-10);
+      turnDegrees(90);
       this.horizontalPosition -= 10;
     }
 
     public void returnToHome() throws InterruptedException {
       driveDistance((-1) * (this.verticalPosition));
-      turnDegrees(90);
+      turnDegrees(-90);
       driveDistance(this.horizontalPosition);
       //if it's to the left, horizontalPosition is negative and so it drives backwards. If it's to the right, horizontalPosition is positive and so it drives forwards. Given that it is facing left, this will move it correctly.
-      turnDegrees(-90);
+      turnDegrees(90);
       this.horizontalPosition = 0;
       this.verticalPosition = 0;
     }
